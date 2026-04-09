@@ -1,0 +1,17 @@
+body{background:#eeeeee}
+.g-top{background:#595959; color:#fff; margin:0; text-align:center; line-height:35px; height:35px; position:relative;}
+.g-top .btn{position:absolute; left:10px; top:10px; background:#acacac; color:#ffffff; font-size:11px; }
+.top-img img{ width:100%;}
+.g-cont{padding:30px 15px; background-color:#f1f1f1}
+.g-cont ul{}
+.g-cont ul li{margin:0 0 10px;}
+.g-cont ul li input,
+.g-cont ul li textarea{border:0;background:#fff;}
+.g-cont .name{float:left; width:100%;}
+.g-cont .password{float:right; width:48%;}
+.g-cont .msg
+.g-cont .msg .form-control{word-break: break-all;}
+.g-cont .btn{background:#595959; color:#ffffff; font-size:13px; font-weight:bold; display:block;}
+
+.delform{margin-top:10px;}
+.delform .delmsg{margin-bottom:5px;color:#939393;font-size:12px;}

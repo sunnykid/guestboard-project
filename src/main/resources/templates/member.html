@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="/css/common.css" rel="stylesheet">
+<link href="/css/guestbook.css" rel="stylesheet">
+
+<title>방명록 (K8S)</title>
+</head>
+<body>
+	<h4 class="g-top">회원목록 v1</h4>
+	<div class="top-img">
+		<img src="/img/bg-guestbook.jpg">
+	</div>
+	<form action="/" method="post" id="frm">
+		<div class="g-cont">
+			<ul>
+				<li class="name">
+				<input name="id" type="text" maxlength="20" placeholder="아이디" class="form-control"></li>
+				<li class="name">
+				<input name="mbName" type="text" maxlength="20" placeholder="이름" class="form-control"></li>
+				<li class="name">
+				<input name="mbNickName" type="text" maxlength="20" placeholder="별명" class="form-control"></li>
+				<li class="msg">
+				<input name="mbEmail" type="text" maxlength="20" placeholder="이메일" class="form-control"></li>
+			</ul>
+			
+			<p class="btn btn-lg" onclick="document.getElementById('frm').submit();">회원등록하기</p>
+		</div>
+	</form>
+
+	<div class="guestbook list displaynone" style="display: block;">
+<table>
+<tr>
+<th>Id</th><th>Name</th><th>NickName</th><th>Email</th>
+</tr>
+<tr th:each="member : ${memberlist}">
+<td th:text="${member.mbId}"></td>
+<td th:text="${member.mbName}"></td>
+<td th:text="${member.mbNickName}"></td>
+<td th:text="${member.mbEmail}"></td>
+</tr>
+</table>	
+	</div>
+</body>
+</html>
