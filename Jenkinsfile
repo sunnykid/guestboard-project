@@ -40,7 +40,7 @@ pipeline {
         }
         stage('Staging Deploy') {
             steps {
-                sshagent(credentials: ['Staging-PrivateKey']) {
+                sshagent(credentials: ['deploy-auth']) {
                     sh "ssh -o StrictHostKeyChecking=no ubuntu@43.202.3.58 docker container rm -f guestboard"
                     sh "ssh -o StrictHostKeyChecking=no ubuntu@43.202.3.58 docker container run -d -p 80:8080 --name=guestboard ${strDockerImage} "
                 }
