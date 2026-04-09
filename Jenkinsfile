@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Github Clone') {
             steps {
-                git branch: 'main', url:'https://github.com/sunnykid/guestboard.git'
+                git branch: 'main', url:'https://github.com/sunnykid/guestboard-project.git'
             }
         }
         stage('Build') {
