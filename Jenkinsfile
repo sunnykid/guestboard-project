@@ -42,11 +42,7 @@ pipeline {
             steps {
                 sshagent(credentials: ['Staging-PrivateKey']) {
                     sh "ssh -o StrictHostKeyChecking=no ubuntu@43.202.3.58 docker container rm -f guestboard"
-                    sh "ssh -o StrictHostKeyChecking=no ubuntu@43.202.3.58 docker container run \
-                                        -d \
-                                        -p 80:8080 \                                        
-                                        --name=guestboard \
-                                        ${strDockerImage} "
+                    sh "ssh -o StrictHostKeyChecking=no ubuntu@43.202.3.58 docker container run -d -p 80:8080 --name=guestboard ${strDockerImage} "
                 }
             }
         }
